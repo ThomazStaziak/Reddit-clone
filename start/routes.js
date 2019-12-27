@@ -20,4 +20,4 @@ Route.get("/", () => {
   return { greeting: "Hello world in JSON" };
 });
 
-Route.post("/threads", "ThreadController.store");
+Route.resource("threads", "ThreadController").only(["store", "destroy"]);

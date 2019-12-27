@@ -8,6 +8,12 @@ class ThreadController {
 
     return response.json({ thread });
   }
+
+  async destroy({ params }) {
+    const thread = await Thread.findOrFail(params.id);
+
+    await thread.delete();
+  }
 }
 
 module.exports = ThreadController;
