@@ -22,10 +22,11 @@ Factory.blueprint("App/Models/Thread", async faker => {
   };
 });
 
-Factory.blueprint("App/Models/User", faker => {
+Factory.blueprint("App/Models/User", (faker, i, data) => {
   return {
     username: faker.username(),
     email: faker.email(),
-    password: "123546"
+    password: "123546",
+    ...data
   };
 });
